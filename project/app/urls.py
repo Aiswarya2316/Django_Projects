@@ -7,5 +7,8 @@ path('fun3/<int:a>/<b>',views.fun3),
 path('fun4/<int:a>/<int:c>',views.fun4),
 path('salary/<int:year>/<int:sal>',views.salary),
 path('bill/<int:unit>',views.bill),
-path('number/<int:num>',views.number)
+path('number/<int:num>',views.number),
+path('city/<city>',views.city),
+path('cost/<int:costprice>',views.cost),
+path('num/<int:nmbr>',views.num)
 ]

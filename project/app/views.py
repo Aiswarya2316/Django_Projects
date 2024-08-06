@@ -52,3 +52,32 @@ def number(request,num):
        return HttpResponse("saturday")
     elif num==8:
        return HttpResponse("invalid !")                     
+
+def city(request,city):
+    if city=="Delhi":
+       return HttpResponse("Red Fort")
+    elif city=="agra":
+       return HttpResponse("Taj Mahal")
+    elif city=="jaipur":
+        return HttpResponse("Jal Mahal")
+    else:
+        return HttpResponse('no monument found')
+
+def cost(request,costprice):
+    if costprice > 100000:
+        # tax_percentage = 0.15 * costprice
+        return HttpResponse("tax:" +str(0.15 * costprice))
+    elif costprice > 50000:
+            # tax_percentage = 0.10 * costprice
+            return HttpResponse("tax" +str(0.10 * costprice))
+    else:
+            # tax_percentage = 0.05 * costprice
+            return HttpResponse("tax" +str(0.05 * costprice))
+    
+def num(request,nmbr):
+    last_digit = nmbr % 10
+    if last_digit % 3 == 0:
+        return HttpResponse("The last digit of the number is divisible by 3.")
+    else:
+        return HttpResponse("The last digit of the number is not divisible by 3.")    
+                
