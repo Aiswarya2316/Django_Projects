@@ -1,5 +1,11 @@
 from django.urls import path
 from . import views
 urlpatterns = [
-path('',views.fun1)
+path('fun1',views.fun1),
+path('fun2',views.fun2),
+path('fun3/<int:a>/<b>',views.fun3),
+path('fun4/<int:a>/<int:c>',views.fun4),
+path('salary/<int:year>/<int:sal>',views.salary),
+path('bill/<int:unit>',views.bill),
+path('number/<int:num>',views.number)
 ]
