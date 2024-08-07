@@ -65,14 +65,11 @@ def city(request,city):
 
 def cost(request,costprice):
     if costprice > 100000:
-        # tax_percentage = 0.15 * costprice
         return HttpResponse("tax:" +str(0.15 * costprice))
     elif costprice > 50000:
-            # tax_percentage = 0.10 * costprice
-            return HttpResponse("tax" +str(0.10 * costprice))
+        return HttpResponse("tax" +str(0.10 * costprice))
     else:
-            # tax_percentage = 0.05 * costprice
-            return HttpResponse("tax" +str(0.05 * costprice))
+        return HttpResponse("tax" +str(0.05 * costprice))
     
 def num(request,nmbr):
     last_digit = nmbr % 10
@@ -81,3 +78,22 @@ def num(request,nmbr):
     else:
         return HttpResponse("The last digit of the number is not divisible by 3.")    
                 
+
+def html(req):
+    a="heloooo"
+    b=[1,2,3,4,5,6,7,8,9,10]
+    c={'name':"aisu",'age':21}
+    return render(req,'index.html',{'data':b,'data2':a,'data3':c})  
+
+def htmll(req):
+    b=[1,2,3,4,5,6,7,8,9,10]
+    return render(req,'2nd.html',{'data':b})      
+
+
+def student(req):
+    students=[{'name':"aiswarya",'age':21,'mark':100},
+    {'name':"aisuu",'age':20,'mark':99},
+    {'name':"aisu",'age':19,'mark':98},
+    {'name':"ais",'age':18,'mark':97},
+    {'name':"ai",'age':17,'mark':96}]                  
+    return render(req,'studdtls.html',{'data':students})

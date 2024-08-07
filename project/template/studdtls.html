@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>STUDENT DETAILS</h1>
+    <table border="1" width="1000px" height="100px">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Mark</th>
+        </tr>
+        {% for i in data %}
+        <tr>
+            <td>{{i.name}}</td>
+            <td>{{i.age}}</td>
+            <td>{{i.mark}}</td>
+        </tr>
+        {% endfor %}
+    </table><br><br>
+    <a href="">mark below 50</a><br><br>
+    <a href="">mark above 50</a><br><br>
+    <!-- {{data}} -->
+</body>
+</html>

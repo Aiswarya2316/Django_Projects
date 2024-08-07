@@ -10,5 +10,8 @@ path('bill/<int:unit>',views.bill),
 path('number/<int:num>',views.number),
 path('city/<city>',views.city),
 path('cost/<int:costprice>',views.cost),
-path('num/<int:nmbr>',views.num)
+path('num/<int:nmbr>',views.num),
+path('html',views.html),
+path('htmll',views.htmll),
+path('student',views.student)
 ]
