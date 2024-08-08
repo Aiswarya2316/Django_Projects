@@ -13,5 +13,8 @@ path('cost/<int:costprice>',views.cost),
 path('num/<int:nmbr>',views.num),
 path('html',views.html),
 path('htmll',views.htmll),
-path('student',views.student)
+path('student',views.student),
+path('above',views.above),
+path('below',views.below),
+path('pet',views.pet)
 ]
