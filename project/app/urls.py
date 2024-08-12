@@ -16,5 +16,8 @@ path('htmll',views.htmll),
 path('student',views.student),
 path('above',views.above),
 path('below',views.below),
-path('pet',views.pet)
+path('pet',views.pet),
+path('form',views.form),
+path('edit/<std>',views.edit),
+path('delete/<name>',views.delete),
 ]

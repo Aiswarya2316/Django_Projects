@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 # Create your views here.
 
@@ -126,3 +126,37 @@ def below(req):
 
 def pet(req):
     return render(req,'static.html')
+
+l=[]
+def form(req):
+    if req.method=="POST":
+        name=req.POST['name']
+        age=req.POST['age']
+        mark=req.POST['mark']
+        l.append({'nm':name , 'ag':age , 'mk':mark})
+        return render(req,'form.html',{'data':l})
+    else:       
+        return render(req,'form.html',{'data':l})    
+
+def edit(req,std):
+    std1={}
+    pos=0
+    for i in l:
+        if i['nm']==std:
+            std1=i
+            pos=l.index(i)
+    if req.method=="POST":
+        name=req.POST['name']
+        age=req.POST['age']
+        mark=req.POST['mark']
+        l[pos]={'nm':name , 'ag':age , 'mk':mark}
+        return redirect(form)
+    else:   
+         return render(req,'frm_edit.html',{'data':std1})     
+
+def delete(req,name):
+    for i in l:
+        if i['nm']==name:
+            l.remove(i)
+            return redirect(form)
+    return render
