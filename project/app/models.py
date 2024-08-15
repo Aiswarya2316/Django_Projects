@@ -5,5 +5,5 @@ class Student(models.Model):
     name = models.TextField()
     age = models.IntegerField()
     mark = models.IntegerField()
-        def__str__(self):
-            return self.name
+    def __str__(self):
+        return self.name

@@ -20,4 +20,8 @@ path('pet',views.pet),
 path('form',views.form),
 path('edit/<std>',views.edit),
 path('delete/<name>',views.delete),
+path('add',views.add),
+path('display',views.display),
+path('edits/<int:id>',views.edits),
+path('deletes/<int:id>',views.deletes),
 ]

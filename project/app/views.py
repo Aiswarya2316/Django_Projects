@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
+from .models import *
 # Create your views here.
 
 def fun1(request):
@@ -160,3 +161,33 @@ def delete(req,name):
             l.remove(i)
             return redirect(form)
     return render
+
+def add(req):
+    if req.method=='POST':
+        name1=req.POST['name']
+        age2=req.POST['age']
+        mark3=req.POST['mark']
+        data=Student.objects.create(name=name1,age=age2,mark=mark3)
+        data.save()
+        return redirect(display)
+
+    return render(req,'add.html')
+
+def display(req):
+    data=Student.objects.all()
+    return render(req,"display.html",{'data':data})
+
+def edits(req,id):
+    data=Student.objects.get(pk=id)
+    if req.method=='POST':
+        name1=req.POST['name']
+        age2=req.POST['age']
+        mark3=req.POST['mark']
+        Student.objects.filter(pk=id).update(name=name1,age=age2,mark=mark3)
+        return redirect(display)
+    return render(req,'edit.html',{'data':data})
+
+def deletes(req,id):
+    data=Student.objects.get(pk=id)
+    data.delete()
+    return redirect(display)    
