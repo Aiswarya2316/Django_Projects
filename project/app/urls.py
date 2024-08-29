@@ -26,6 +26,9 @@ path('edits/<int:id>',views.edits),
 path('deletes/<int:id>',views.deletes),
 path('normal_forms',views.normal_forms),
 path('model_form',views.model_form_dis),
+path('parent',views.parent),
+path('child',views.child),
+
 
 
 ]

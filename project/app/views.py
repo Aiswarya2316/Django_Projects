@@ -216,4 +216,10 @@ def model_form_dis(req):
         return redirect(model_form_dis)
     else:
         std=model_form()
-        return render(req,'model_form.html',{'std':std})         
+        return render(req,'model_form.html',{'std':std})      
+
+def parent(req):
+    return render(req,'tempinheritence.html')
+
+def child(req):
+    return render(req,'inheritancechild.html')
